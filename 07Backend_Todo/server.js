@@ -9,4 +9,6 @@ app.listen(PORT,()=>{
     // but unable to use above . i will see it later 
     console.log(`server is runnig at ${PORT} in ${process.env.NODE_URL} mode`)
 })// this is an server which hosted locally 
-
+app.get("/",(req,res)=>{
+res.send("Deployed")
+})
