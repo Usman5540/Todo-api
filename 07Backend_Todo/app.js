@@ -15,7 +15,7 @@ app.use( cors({// Cross Origin Resource Sharing
     methods:["GET","POST","PUT","DELETE"],
     credentials:true, 
 }))
-app.use("/users",userRouter) 
+app.use("/api/v1/users",userRouter) 
 app.use("/api/v1/tasks",taskRouter)
 app.use(errorMiddlewere);
 export default app
