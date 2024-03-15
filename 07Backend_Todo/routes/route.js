@@ -7,7 +7,7 @@ const router=express.Router()
 router.post("/new",newUser)
 router.get("/all",getAlluers)
 router.post("/login",login)
-router.get("/logout",logout)
+router.get("/logout",logout)// sirf idhar likhny men aur code readability barhti hai aur kuch nahi
 router.get("/me",isAuthenticated,getUserDetails)  // OK 
 export default router
  

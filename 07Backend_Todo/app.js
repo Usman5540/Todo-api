@@ -10,11 +10,14 @@ dotenv.config({ path: './config.env' });
 const app = express()
 app.use(express.json())
 app.use(cookieParser())// this will allow for req.cookies in getuserDetails
-app.use( cors({// Cross Origin Resource Sharing 
-    origins:[process.env.NODE_URL],
-    methods:["GET","POST","PUT","DELETE"],
-    credentials:true, 
-}))
+// Cross Origin Resource Sharing 
+app.use(cors({
+    origin: [process.env.NODE_URL, 'http://localhost:5173'],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
+
+// this si what we used in front end withcredential true 
 app.use("/api/v1/users",userRouter) 
 app.use("/api/v1/tasks",taskRouter)
 app.use(errorMiddlewere);
