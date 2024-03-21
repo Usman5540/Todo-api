@@ -5,7 +5,8 @@ import Jwt  from "jsonwebtoken";
 export const isAuthenticated=async (req,res,next)=>{
   // below is the new concept which is conntect with the middlewere (cookieParser)
   const {token} = req.cookies;
-if (!token) {
+console.log(token);
+  if (!token) {
     res.status(404).json({
       success:false,
       message:"log in first",
