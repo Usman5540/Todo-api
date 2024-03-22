@@ -16,6 +16,7 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
+app.set("trust proxy",1);
 
 // this si what we used in front end withcredential true 
 app.use("/api/v1/users",userRouter) 
