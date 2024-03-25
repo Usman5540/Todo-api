@@ -20,29 +20,3 @@ import jwt from 'jsonwebtoken'
 // }
 
 
-export const tokenfunction = (res, user, message, status, req) => {
-  const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
-
-  let secureFlag = true; // Default to true for production
-
-  // Check if the request is secure (HTTPS)
-  if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
-    secureFlag = true;
-  } else {
-    secureFlag = false;
-  }
-
-  res
-    .status(status)
-    .cookie("token", token, {
-      httpOnly: true,
-      maxAge: 15 * 60 * 1000,
-      sameSite: process.env.NODE_ENV === "development" ? "none" : "lax",
-      secure: secureFlag // Set secure flag based on request
-    })
-    .json({
-      success: true,
-      message,
-    });
-};
-
