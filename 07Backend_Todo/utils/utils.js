@@ -1,4 +1,4 @@
-// import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 // export const tokenfunction=(res,user,message,status)=>{
 //     // syntax must use {} inside built in function 
 //     const token  = jwt.sign({_id: user._id},process.env.JWT_SECRET) //syntax we need to give secret
