@@ -12,11 +12,10 @@ app.use(express.json())
 app.use(cookieParser())// this will allow for req.cookies in getuserDetails
 // Cross Origin Resource Sharing 
 app.use(cors({
-    origin: [process.env.NODE_URL, 'http://localhost:5173'],
+    origin: [process.env.NODE_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
-app.set("trust proxy",1);
 
 // this si what we used in front end withcredential true 
 app.use("/api/v1/users",userRouter) 
