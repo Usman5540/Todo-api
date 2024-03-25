@@ -11,7 +11,7 @@ console.log(token);
       success:false,
       message:"log in first",
     })}
-    // below verify function is used to get any thing from token which is already created 
+    // below verify function is used to get any thing from token which is already created  when we were logged in at that time the token was created 
     // here we are extracting _id which we stored in token 
     const decoded=  Jwt.verify(token,process.env.JWT_SECRET)
     req.user= await User.findById(decoded._id) // extaract id that we passed when we made a token and we do not need to pass as parameter user so we can use as req.user
