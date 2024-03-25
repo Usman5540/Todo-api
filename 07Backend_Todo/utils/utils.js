@@ -7,7 +7,7 @@ export const tokenfunction=(res,user,message,status)=>{
     res.status(status).cookie("token",token,{
       httpOnly: true,//for the security purpose 
       maxAge:15*60*1000,
-      SameSite:process.env.NODE_URL==="Development"? "lax" :"none",
+      SameSite:process.env.NODE_URL==="Development"? "none" :"lax",
       // none means any third party web can set cookie as we saw in video and strict only first-party site can set cookie and lax third party can request but does not set cookie this allow only for 
       // first-party 
         // by default it is Strict which means url of the frontend and backend must be same 
